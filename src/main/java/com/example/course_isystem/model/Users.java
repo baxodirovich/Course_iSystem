@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -23,6 +24,7 @@ public class Users {
     private String addressFirst;
     private String addressSecond;
     private String password;
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = ("user_types_id"), insertable = false, updatable = false)
@@ -36,4 +38,12 @@ public class Users {
     @Column(name = ("user_image_id"))
     private Integer userImageId;
 
+    @Column(name = ("created_at"))
+    private LocalDateTime createdAt;
+
+    @Column(name = ("updated_at"))
+    private LocalDateTime updatedAt;
+
+    @Column(name = ("deleted_at"))
+    private LocalDateTime deletedAt;
 }
