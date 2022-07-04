@@ -18,6 +18,7 @@ public class UsersService {
 
     public boolean create(UsersDto usersDto) {
         Users users = new Users();
+        users.setId(usersDto.getId());
         users.setStatus(true);
         users.setCreatedAt(LocalDateTime.now());
         users.setUserTypes(userTypesService.getEntity(usersDto.getUserTypesId()));

@@ -17,9 +17,9 @@ public class AttendanceTypeService {
     public boolean create(AttendanceTypeDto attendanceTypeDto) {
         AttendanceType attendanceType = new AttendanceType();
         attendanceTypeDto.setId(attendanceType.getId());
-        convertDtoToEntity(attendanceTypeDto, attendanceType);
         attendanceType.setStatus(true);
         attendanceType.setCreatedAt(LocalDateTime.now());
+        convertDtoToEntity(attendanceTypeDto, attendanceType);
         attendanceTypeRepository.save(attendanceType);
         return true;
     }
@@ -33,8 +33,8 @@ public class AttendanceTypeService {
 
     public boolean update(Integer id, AttendanceTypeDto attendanceTypeDto) {
         AttendanceType update = getEntity(id);
-        convertDtoToEntity(attendanceTypeDto, update);
         update.setUpdatedAt(LocalDateTime.now());
+        convertDtoToEntity(attendanceTypeDto, update);
         attendanceTypeRepository.save(update);
         return true;
     }
@@ -46,23 +46,23 @@ public class AttendanceTypeService {
         return true;
     }
 
-    private void convertDtoToEntity(AttendanceTypeDto dto, AttendanceType entity) {
-        entity.setName(dto.getName());
-        entity.setReasonMessage(dto.getReasonMessage());
-        entity.setStatus(true);
-    }
-
-    private void convertEntityToDto(AttendanceType entity, AttendanceTypeDto dto) {
-        dto.setId(entity.getId());
-        dto.setName(entity.getName());
-        dto.setReasonMessage(entity.getReasonMessage());
-    }
-
     private AttendanceType getEntity(Integer id) {
         Optional<AttendanceType> optional = attendanceTypeRepository.finByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new CourseException("AttendanceType Not Found");
         }
         return optional.get();
+    }
+
+    private void convertDtoToEntity(AttendanceTypeDto dto, AttendanceType entity) {
+        entity.setId(entity.getId());
+        entity.setName(dto.getName());
+        entity.setReasonMessage(dto.getReasonMessage());
+    }
+
+    private void convertEntityToDto(AttendanceType entity, AttendanceTypeDto dto) {
+        dto.setId(entity.getId());
+        dto.setName(entity.getName());
+        dto.setReasonMessage(entity.getReasonMessage());
     }
 }
