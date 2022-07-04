@@ -1,6 +1,8 @@
 package com.example.course_isystem.dto;
 
 import com.example.course_isystem.model.Gender;
+import com.example.course_isystem.model.UserImage;
+import com.example.course_isystem.model.UserTypes;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,10 +41,10 @@ public class UsersDto {
     @NotBlank
     private String password;
 
-    private UserTypesDto userTypesDto;
+    private UserTypes userTypes;
     private Integer userTypesId;
 
-    private UserImageDto userImageDto;
+    private UserImage userImage;
     private Integer userImageId;
 
 

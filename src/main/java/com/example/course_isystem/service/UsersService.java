@@ -30,7 +30,7 @@ public class UsersService {
     public UsersDto get(Integer id) {
         Users users = getEntity(id);
         UsersDto usersDto = new UsersDto();
-        usersDto.setUserTypesId(users.getUserTypesId());
+        usersDto.setUserTypes(users.getUserTypes());
         convertDtoToEntity(usersDto, users);
         return usersDto;
     }
