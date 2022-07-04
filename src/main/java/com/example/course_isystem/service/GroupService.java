@@ -12,7 +12,7 @@ public class GroupService {
         return false;
     }
 
-    public ClassesDto get(Integer id) {
+    public GroupDto get(Integer id) {
         return null;
     }
 

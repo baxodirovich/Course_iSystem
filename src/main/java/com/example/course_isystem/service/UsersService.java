@@ -12,7 +12,7 @@ public class UsersService {
         return false;
     }
 
-    public ClassesDto get(Integer id) {
+    public UsersDto get(Integer id) {
         return null;
     }
 

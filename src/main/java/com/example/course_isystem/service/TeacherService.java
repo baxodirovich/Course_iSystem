@@ -12,7 +12,7 @@ public class TeacherService {
         return false;
     }
 
-    public ClassesDto get(Integer id) {
+    public TeacherDto get(Integer id) {
         return null;
     }
 

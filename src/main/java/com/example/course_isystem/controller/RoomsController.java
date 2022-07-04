@@ -23,7 +23,7 @@ public class RoomsController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id){
-        ClassesDto result = roomsService.get(id);
+        RoomsDto result = roomsService.get(id);
         return ResponseEntity.ok(result);
     }
 

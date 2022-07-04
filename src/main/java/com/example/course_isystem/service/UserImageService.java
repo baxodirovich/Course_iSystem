@@ -12,7 +12,7 @@ public class UserImageService {
         return false;
     }
 
-    public ClassesDto get(Integer id) {
+    public UserImageDto get(Integer id) {
         return null;
     }
 

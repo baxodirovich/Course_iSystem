@@ -23,7 +23,7 @@ public class GroupController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id){
-        ClassesDto result = groupService.get(id);
+        GroupDto result = groupService.get(id);
         return ResponseEntity.ok(result);
     }
 

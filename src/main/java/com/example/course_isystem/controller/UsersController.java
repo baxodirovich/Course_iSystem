@@ -24,7 +24,7 @@ public class UsersController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id){
-        ClassesDto result = usersService.get(id);
+        UsersDto result = usersService.get(id);
         return ResponseEntity.ok(result);
     }
 

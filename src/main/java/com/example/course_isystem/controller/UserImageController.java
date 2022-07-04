@@ -24,7 +24,7 @@ public class UserImageController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id){
-        ClassesDto result = userImageService.get(id);
+        UserImageDto result = userImageService.get(id);
         return ResponseEntity.ok(result);
     }
 

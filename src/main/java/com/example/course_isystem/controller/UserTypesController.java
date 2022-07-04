@@ -24,7 +24,7 @@ public class UserTypesController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id){
-        ClassesDto result = userTypesService.get(id);
+        UserTypesDto result = userTypesService.get(id);
         return ResponseEntity.ok(result);
     }
 
