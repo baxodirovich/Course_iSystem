@@ -57,7 +57,7 @@ public class TeacherService {
     Teacher getEntity(Integer id) {
         Optional<Teacher> optional = teacherRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
-            throw new CourseException("Users Not Found");
+            throw new CourseException("Teacher Not Found");
         }
         return optional.get();
     }

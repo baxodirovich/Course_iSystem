@@ -49,7 +49,7 @@ public class AttendanceTypeService {
     AttendanceType getEntity(Integer id) {
         Optional<AttendanceType> optional = attendanceTypeRepository.finByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
-            throw new CourseException("AttendanceType Not Found");
+            throw new CourseException("Attendance Type Not Found");
         }
         return optional.get();
     }

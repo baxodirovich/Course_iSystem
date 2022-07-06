@@ -52,7 +52,7 @@ public class GroupTypesService {
     public GroupTypes getEntity(Integer groupTypesId) {
         Optional<GroupTypes> optional = groupTypesRepository.findByIdAndDeletedAtIsNull(groupTypesId);
         if (optional.isEmpty()) {
-            throw new CourseException("Users Not Found");
+            throw new CourseException("Group Types Not Found");
         }
         return optional.get();
     }

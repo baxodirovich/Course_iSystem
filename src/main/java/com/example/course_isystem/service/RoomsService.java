@@ -50,7 +50,7 @@ public class RoomsService {
     public Rooms getEntity(Integer roomsId) {
         Optional<Rooms> optional = roomsRepository.findByIdAndDeletedAtIsNull(roomsId);
         if (optional.isEmpty()) {
-            throw new CourseException("Users Not Found");
+            throw new CourseException("Rooms Not Found");
         }
         return optional.get();
     }
