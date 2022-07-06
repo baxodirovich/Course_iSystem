@@ -23,7 +23,7 @@ public class UserImageDto {
     @NotBlank
     private String type;
 
-    private Integer size;
+    private Long size;
     private Boolean status;
 
     private LocalDateTime createdAt;

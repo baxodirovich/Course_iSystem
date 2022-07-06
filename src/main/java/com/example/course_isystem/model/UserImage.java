@@ -19,7 +19,7 @@ public class UserImage {
     private String url;
     private String path;
     private String type;
-    private Integer size;
+    private Long size;
     private Boolean status;
 
     @Column(name = ("created_at"))
