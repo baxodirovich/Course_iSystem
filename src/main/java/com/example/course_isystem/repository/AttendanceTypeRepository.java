@@ -9,6 +9,5 @@ import java.util.Optional;
 @Repository
 
 public interface AttendanceTypeRepository extends JpaRepository<AttendanceType, Integer> {
-
-    List<AttendanceType> findAllByDeletedAtIsNull();
+    Optional<AttendanceType> findByIdAndDeletedAtIsNull(Integer id);
 }
