@@ -52,7 +52,7 @@ public class UsersService {
         return true;
     }
 
-    public Users getEntity(Integer id){
+    public Users getEntity(Integer id) {
         Optional<Users> optional = usersRepository.findByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()) {
             throw new CourseException("Users Not Found");

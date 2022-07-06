@@ -46,7 +46,7 @@ public class AttendanceTypeService {
         return true;
     }
 
-    private AttendanceType getEntity(Integer id) {
+    AttendanceType getEntity(Integer id) {
         Optional<AttendanceType> optional = attendanceTypeRepository.finByIdAndDeletedAtIsNull(id);
         if (optional.isEmpty()){
             throw new CourseException("AttendanceType Not Found");
@@ -55,14 +55,14 @@ public class AttendanceTypeService {
     }
 
     private void convertDtoToEntity(AttendanceTypeDto dto, AttendanceType entity) {
-        entity.setId(entity.getId());
-        entity.setName(dto.getName());
-        entity.setReasonMessage(dto.getReasonMessage());
-    }
-
-    private void convertEntityToDto(AttendanceType entity, AttendanceTypeDto dto) {
         dto.setId(entity.getId());
         dto.setName(entity.getName());
         dto.setReasonMessage(entity.getReasonMessage());
+    }
+
+    private void convertEntityToDto(AttendanceType entity, AttendanceTypeDto dto) {
+        entity.setId(dto.getId());
+        entity.setName(dto.getName());
+        entity.setReasonMessage(dto.getReasonMessage());
     }
 }

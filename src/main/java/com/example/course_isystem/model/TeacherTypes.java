@@ -16,6 +16,7 @@ public class TeacherTypes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Column(name = ("display_name"))
     private String displayName;
     private Boolean status;
 

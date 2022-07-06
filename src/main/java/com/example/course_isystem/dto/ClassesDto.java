@@ -1,5 +1,8 @@
 package com.example.course_isystem.dto;
 
+import com.example.course_isystem.model.AttendanceType;
+import com.example.course_isystem.model.Rooms;
+import com.example.course_isystem.model.UserGroups;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,12 +28,12 @@ public class ClassesDto {
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
-    private RoomsDto roomsDto;
+    private Rooms rooms;
     private Integer roomsId;
 
-    private UserGroupsDto userGroupsDto;
+    private UserGroups userGroups;
     private Integer userGroupsId;
 
-    private AttendanceTypeDto attendanceTypeDto;
+    private AttendanceType attendanceType;
     private Integer attendanceTypeId;
 }
