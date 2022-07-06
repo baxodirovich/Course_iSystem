@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class AttendanceTypeService {
-    private AttendanceTypeRepository attendanceTypeRepository;
+    private final AttendanceTypeRepository attendanceTypeRepository;
     public boolean create(AttendanceTypeDto attendanceTypeDto) {
         AttendanceType attendanceType = new AttendanceType();
         attendanceTypeDto.setId(attendanceType.getId());
