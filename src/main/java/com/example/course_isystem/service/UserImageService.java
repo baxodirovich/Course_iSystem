@@ -54,16 +54,15 @@ public class UserImageService {
     public boolean delete(Integer id) {
         UserImage userImage = getEntity(id);
         String token = userImage.getToken();
-        String url = userImage.getUrl();
         String ymd = userImage.getPath();
         File folder = new File(fileUrl + ymd);
         if (folder.exists()) {
             folder.delete();
         }
-        //Path path = Paths.get(fileUrl).resolve(url);
+        String imagePath = fileUrl + ymd + "/" + token + "." +userImage.getType();
         try {
             Files.deleteIfExists(
-                    Paths.get(fileUrl));
+                    Paths.get(imagePath));
         } catch (NoSuchFileException e) {
             System.out.println(
                     "No such file/directory exists");
@@ -72,13 +71,8 @@ public class UserImageService {
         } catch (IOException e) {
             System.out.println("Invalid permissions.");
         }
-        /*try {
-            Files.delete(path);
-        } catch (IOException e) {
-            throw new StudentException("the image was not deleted");
-        }*/
-        //userImage.setDeletedAt(LocalDateTime.now());
-        userImageRepository.save(userImage);
+        userImage.setDeletedAt(LocalDateTime.now());
+        userImageRepository.delete(userImage);
         return true;
     }
 
