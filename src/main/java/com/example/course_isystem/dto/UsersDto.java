@@ -22,12 +22,13 @@ public class UsersDto {
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
+    //TODO:create firstname lastname
     @NotBlank
     private Gender gender;
     @NotBlank
-    private String firstName;
+    private String name;
     @NotBlank
-    private String lastName;
+    private String surname;
     @NotBlank
     private String middleName;
     @NotBlank

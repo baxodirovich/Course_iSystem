@@ -62,8 +62,8 @@ public class UsersService {
 
     private void convertDtoToEntity(UsersDto dto, Users entity) {
         dto.setId(entity.getId());
-        dto.setFirstName(entity.getFirstName());
-        dto.setLastName(entity.getLastName());
+        dto.setName(entity.getName());
+        dto.setSurname(entity.getSurname());
         dto.setMiddleName(entity.getMiddleName());
         dto.setPhone(entity.getPhone());
         dto.setEmail(entity.getEmail());
@@ -75,8 +75,8 @@ public class UsersService {
     }
 
     private void convertEntityToDto(Users entity, UsersDto dto) {
-        entity.setFirstName(dto.getFirstName());
-        entity.setLastName(dto.getLastName());
+        entity.setName(dto.getName());
+        entity.setSurname(dto.getSurname());
         entity.setMiddleName(dto.getMiddleName());
         entity.setPhone(dto.getPhone());
         entity.setEmail(dto.getEmail());
