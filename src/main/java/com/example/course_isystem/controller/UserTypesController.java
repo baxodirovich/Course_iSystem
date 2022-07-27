@@ -1,6 +1,5 @@
 package com.example.course_isystem.controller;
 
-import com.example.course_isystem.dto.ClassesDto;
 import com.example.course_isystem.dto.UserTypesDto;
 import com.example.course_isystem.service.UserTypesService;
 import lombok.AllArgsConstructor;

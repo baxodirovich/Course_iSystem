@@ -1,10 +1,8 @@
 package com.example.course_isystem.service;
 
-import com.example.course_isystem.dto.ClassesDto;
 import com.example.course_isystem.dto.GroupTypesDto;
 import com.example.course_isystem.exeption.CourseException;
 import com.example.course_isystem.model.GroupTypes;
-import com.example.course_isystem.model.Users;
 import com.example.course_isystem.repository.GroupTypesRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

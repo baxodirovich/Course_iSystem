@@ -1,6 +1,5 @@
 package com.example.course_isystem.controller;
 
-import com.example.course_isystem.dto.ClassesDto;
 import com.example.course_isystem.dto.GroupDto;
 import com.example.course_isystem.service.GroupService;
 import lombok.AllArgsConstructor;

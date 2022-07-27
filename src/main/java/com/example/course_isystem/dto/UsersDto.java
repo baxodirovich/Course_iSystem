@@ -6,6 +6,7 @@ import com.example.course_isystem.model.UserTypes;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.lang.NonNull;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
@@ -23,7 +24,7 @@ public class UsersDto {
     private LocalDateTime deletedAt;
 
     //TODO:create firstname lastname
-    @NotBlank
+    @NonNull
     private Gender gender;
     @NotBlank
     private String name;

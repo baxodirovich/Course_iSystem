@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/attendance_type")
+@RequestMapping("/api/v1/attendance_types")
 @AllArgsConstructor
 public class AttendanceTypeController {
     private final AttendanceTypeService attendanceTypeService;
